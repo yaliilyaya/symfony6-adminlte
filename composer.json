@@ -1,0 +1,25 @@
+{
+    "name": "yaliilyaya/symfony6-adminlte",
+    "type": "library",
+    "description": "",
+    "homepage": "https://github.com/yaliilyaya/symfony6-adminlte",
+    "authors": [
+        {
+            "name": "Future People",
+            "homepage": "https://github.com/yaliilyaya"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yaliilyaya\\Symfony6AdminLte\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yaliilyaya\\Symfony6AdminLte\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "8.1.*|7.2.*"
+    }
+}

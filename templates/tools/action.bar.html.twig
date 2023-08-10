@@ -1,0 +1,16 @@
+{% set isShort = isShort | default(false) %}
+<div class="btn-group">
+    {% for action in actions %}
+        {% set isShortAction = action.isShort | default(false) %}
+        {% if isShort or isShortAction %}
+            <a class="btn btn-default btn-sm" href="{{action.href}}" title="{{action.label}}">
+                <span class="{{action.icon | default('fa fa-atom')}}" aria-hidden="true"></span>
+            </a>
+        {% else %}
+            <a class="btn btn-default btn-sm" href="{{action.href}}">
+                <span class="{{action.icon | default('fa fa-atom')}}" aria-hidden="true"></span>
+                {{action.label}}
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,35 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block page_content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Schema list</h3>
+            <div class="card-tools"></div>
+        </div>
+
+        <div class="card-body">
+            {% set  list = [
+                {
+                    name: 'default.rosatom-procedures',
+                    url: path('data_admin.sync.table-config', {connectionString: 'default.rosatom-procedures'})
+                }
+            ] %}
+             <table class="table">
+                 <thead>
+                    <tr>Ссылка на схему</tr>
+                 </thead>
+                 <tbody>
+                    {% for item in list %}
+                    <tr>
+                        <td>
+                            <a href="{{ item.url }}">{{ item.name }}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                 </tbody>
+             </table>
+        </div>
+    </div>
+
+
+{% endblock %}

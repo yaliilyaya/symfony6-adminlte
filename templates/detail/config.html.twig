@@ -1,0 +1,25 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %} Config detail | {{ table.name | normalizeName }}{% endblock %}
+
+{% block page_content %}
+    <form method="post" class="card">
+        <div class="card-header">
+            Настройки
+            <div class="card-tools btn-group">
+                <button class="btn btn-info btn-sm" type="submit">Сохранить изменения</button>
+                <a class="btn btn-info btn-sm" href="{{ path('data_admin.detail.disable-all-Column.config', {'connectionString': connectionString}) }}">
+                    Отключить колонки
+                </a>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <textarea class="form-control"
+                      style="height: 700px"
+                      name="data"
+            >{{ json }}</textarea>
+        </div>
+    </form>
+
+
+{% endblock %}

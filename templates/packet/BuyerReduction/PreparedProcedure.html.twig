@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Header />
+    <SOAP:Body>
+        <n0:PreparedProcedure xmlns:prx="urn:sap.com:proxy:SRD:/1SAI/TAS7C403376C6FD069310B0:740" xmlns:n0="urn:bearingpoint.com:Procurement:ETP:Procedure">
+            <Header>
+                <MessageId>5907428889680EB0E70080000A7C186A</MessageId>
+                <CallMode>PRODUCTION</CallMode>
+                <TargetSystem>DMZ_BS_FBR_D</TargetSystem>
+                <AuthInfo>
+                    <Login>qwerty</Login>
+                    <PasswordMD5>7a1d3735c59edcca9532ee0cf4c3aadc</PasswordMD5>
+                </AuthInfo>
+            </Header>
+            <Announcement>
+{#                {{dateFormat(param.finishDate)}}#}
+                <!--Optional:-->
+                <BuyerReduction>
+                    <ReductionOrAuction>A</ReductionOrAuction>
+                    <BaseAnnouncement>
+                        <!--Optional:-->
+                        <EIS_GUID>{{rand().guid()}}</EIS_GUID>
+                        <PurchaseId>{{rand().purchaseId()}}</PurchaseId>
+                        <PurchaseName>{{param.purchaseName}}</PurchaseName>
+                        <PurchaseOfficialLink></PurchaseOfficialLink>
+                        <PurchaseOfficialNumber></PurchaseOfficialNumber>
+                        <FinancingSource>01</FinancingSource>
+                        <Currency>840</Currency>
+                        <!--Optional:-->
+                        <OfferDuration>060</OfferDuration>
+                        <!--ContractDuration>50</ContractDuration-->
+                        <IsClosed>false</IsClosed>
+                        <!--Optional:-->
+                        <MultiStage>
+                            <Stage>1</Stage>
+                            <NStage>1</NStage>
+                        </MultiStage>
+                        <PurchaseOOSNumber>9046546546546</PurchaseOOSNumber>
+                        <MultiCurr>false</MultiCurr>
+                        <Is_Returned>true</Is_Returned>
+                        <participant_hide>false</participant_hide>
+                        <!--Optional:-->
+                        <!--participant_hide>false</participant_hide-->
+                    </BaseAnnouncement>
+
+                    <!--Optional:-->
+                    <Is223FZ>N</Is223FZ>
+                    <!--Optional:-->
+                    <IsMSP223>true</IsMSP223>
+                    <!--Optional:-->
+                    <!--Specify>true</Specify-->
+                    <LotList>
+                        <!--1 or more repetitions:-->
+                        <Lot>
+                            <BaseLot>
+                                <LotId>{{param.lotId}}</LotId>
+                                <LotName>Тест</LotName>
+                                <!--Optional:-->
+
+                                <Is_Returned>true</Is_Returned>
+                                <ReturnQuot>true</ReturnQuot>
+                                <PostQualificationPossibility>1</PostQualificationPossibility>
+                                <!--Optional:-->
+                                <SubMsp>3</SubMsp>
+                                <CustomerList>
+                                    <!--1 or more repetitions:-->
+                                    <Customer>
+                                        <Name>"Росатом ОАО ""Атомкомплект""</Name>
+                                        <ContactInfo>Место нахождения: Россия Почтовый адрес: Россия1</ContactInfo>
+                                        <!--Optional:-->
+                                        <INN>4444444414</INN>
+                                        <!--Optional:-->
+                                        <KPP>444444414</KPP>
+
+                                    </Customer>
+                                </CustomerList>
+                                <!--Zero or more repetitions:-->
+                                <ContractSubject>98.20.10.000</ContractSubject>
+                                <ShortDescription>Раз1работка деклараций опасных производственных объектов (Разработка, проведение экспертиз, регистрация заключения экспертиз деклараций промышленной безопасности ОПО: «Площадка энергоблока №1 Балаковской АЭС», «Площадка энергоблока №2 Балаковской АЭС», «Площадка энергоблока №3 Балаковской АЭС»)</ShortDescription>
+                                <ShortDescriptionEn>ShortDescriptionEn на русском</ShortDescriptionEn>
+                                <ContractCondition>2Филиал ОАО «Концерн Росэнергоатом» «Балаковская атомная станция»</ContractCondition>
+                                <PaymentCondition>2Ф2Филиал ОАО «Концер2Ф2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»м2Филиал О2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»м2Филиал О2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»м2Филиал О2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»2Филиал ОАО «Концерн Росэнергоатом»м2Филиал О2Филиал ОАО «Концерн Росэнер</PaymentCondition>
+                                <!--Optional:-->
+                                <ParticipantRequirementList>
+                                    <ParticipantRequirement>
+                                        <Subcontractor>true</Subcontractor>
+                                        <RequirementId>5356BF59536402E0E10080000A7C186A</RequirementId>
+                                        <RequirementExternalId>1</RequirementExternalId>
+                                        <RequirementName>не иметь задолженности по уплате налогов, сборов, пеней и штрафов, размер которой превышает двадцать пять процентов балансовой стоимости активов участника закупки, определяемой по данным бухгалтерской (финансовой) отчетности за истекший период (год, квартал/полугодие/9 месяцев текущего года)</RequirementName>
+                                        <RequirementNumber>105</RequirementNumber>
+                                        <RequirementLink>00000000000000000000000000000000</RequirementLink>
+                                        <RequiredDocumentList>
+                                            <RequiredDocument>
+                                                <DocumentNumber>BF5C536402E0E10080000A7C186A</DocumentNumber>
+                                                <DocumentName>копию справки об исполнении налогоплательщиком обязанностей по уплате налогов, сборов, страховых взносов, пеней и налоговых санкций, либо справки о состоянии расчетов с бюджетами всех уровней, выданной соответствующими подразделениями Федеральной налоговой службы не ранее чем за 60 дней до дня размещения на официальном сайте о размещении заказов извещения о проведении процедуры закупки</DocumentName>
+                                                <DocumentNameEn>DocumentNameEn</DocumentNameEn>
+                                                <Part>1</Part>
+
+                                            </RequiredDocument>
+                                        </RequiredDocumentList>
+                                    </ParticipantRequirement>
+
+                                    <ParticipantRequirement>
+                                        <Subcontractor>true</Subcontractor>
+                                        <RequirementId>5335CEB404A50B90E10080000A7C186B</RequirementId>
+                                        <RequirementExternalId>7</RequirementExternalId>
+                                        <RequirementName>долженertet иметь соответствующие разрешающие документы на осуществление видов деятельности, связанные с выполнением договора, право на заключение которого является предметом настоящей процедуры закупки, в объёме поставляемого товара/ выполняемых работ/ оказываемых услуг согласно плану распределения объемов поставки товаров/выполнения работ/оказания услуг, в том числе:</RequirementName>
+                                        <RequirementNumber>101</RequirementNumber>
+                                        <RequirementLink>00000000000000000000000000000000</RequirementLink>
+                                        <RequiredDocumentList>
+                                            <RequiredDocument>
+                                                <DocumentNumber>5356BF5C536402E0E10080000A</DocumentNumber>
+                                                <DocumentName>тест</DocumentName>
+                                                <DocumentNameEn>DocumentNameEn</DocumentNameEn>
+                                                <Part>1</Part>
+                                            </RequiredDocument>
+                                        </RequiredDocumentList>
+
+                                    </ParticipantRequirement>
+                                </ParticipantRequirementList>
+
+
+                                <ProductRequirementList>
+                                    <ProductRequirement>
+                                        <RequirementId>734539D71C6C1660E10080000A7C2813</RequirementId>
+                                        <RequirementExternalId>1</RequirementExternalId>
+                                        <RequirementName>Требования к предприятиям-изготовителям товара, право на поставку которого является предметом настоящей процедуры закупки:</RequirementName>
+                                    </ProductRequirement>
+                                    <ProductRequirement>
+                                        <RequirementId>734539D81C6C1660E10080000A7C2813</RequirementId>
+                                        <RequirementExternalId>1/5</RequirementExternalId>
+                                        <RequirementName>системы менеджмента каjjчества (управления, обеспечения и контроля качества), соответствующей</RequirementName>
+                                        <RequirementNameEn>RequirementNameEn</RequirementNameEn>
+                                        <!--Optional:-->
+                                        <ProductRequiredDocumentList>
+                                            <!--1 or more repetitions:-->
+                                            <RequiredDocument>
+                                                <DocumentNumber>734539D81C6C1660E10080000A7C2813</DocumentNumber>
+                                                <DocumentName>имя</DocumentName>
+                                                <!--Optional:-->
+                                                <DocumentNameEn>jskdfhsfhslsdfsdfs</DocumentNameEn>
+                                            </RequiredDocument>
+                                        </ProductRequiredDocumentList>
+                                    </ProductRequirement>
+                                </ProductRequirementList>
+                                <AdditionalDocumentList>
+
+                                    <RequiredDocument>
+                                        <DocumentNumber>7892222</DocumentNumber>
+                                        <DocumentName>имя1</DocumentName>
+                                        <Part>1</Part>
+                                    </RequiredDocument>
+                                    <RequiredDocument>
+                                        <DocumentNumber>2332sdfsf123123</DocumentNumber>
+                                        <DocumentName>имя2</DocumentName>
+                                        <Part>1</Part>
+                                    </RequiredDocument>
+                                </AdditionalDocumentList>
+                                <!--Optional:-->
+                                <Startreqdate>{{dateFormat(param.startreqDate | default('2022-07-20'))}}</Startreqdate>
+                                <!--Optional:-->
+                                <EndreqDate>{{timeFormat(param.endreqDate | default('2022-07-20T10:00:00Z'))}}</EndreqDate>
+                                <OpeningDate>{{timeFormat(param.openingDate | default('2022-07-25T10:00:00Z'))}}</OpeningDate>
+                                <ReviewDate>{{timeFormat(param.reviewDate | default('2022-07-28T20:59:59Z'))}}</ReviewDate>
+                                <!--Optional:-->
+                                <ContractDate>{{dateFormat(param.contractDate | default('2022-07-28'))}}</ContractDate>
+
+
+                                <!--Optional:-->
+                                <FormList>
+                                    <CostSummary Enabled="1">
+                                        <CostSummaryFormType>1</CostSummaryFormType>
+                                        <CostSummaryFieldList>
+                                            <CostSummaryField>
+                                                <CostSummaryFieldNumber>2</CostSummaryFieldNumber>
+                                                <CostSummaryFieldText>Прочие в базисном уровне цен</CostSummaryFieldText>
+                                                <CostSummaryFieldName>OTHER</CostSummaryFieldName>
+                                                <CostSummaryFieldType>V</CostSummaryFieldType>
+                                                <CostSummaryFieldOccur>true</CostSummaryFieldOccur>
+                                            </CostSummaryField>
+                                        </CostSummaryFieldList>
+                                        <Part>C</Part>
+                                    </CostSummary>
+                                </FormList>
+                                <!--PriceFormula>?</PriceFormula-->
+                                <StartPrice>100000000.78</StartPrice>
+                                <!--BasisPrice>?</BasisPrice-->
+                                <MaxcontractPrice>800</MaxcontractPrice>
+                                <LackOfPriceSpecificationReason>ghbxbyf</LackOfPriceSpecificationReason>
+                                <Ensuring>
+                                    <OfferEnsuring>
+                                        <OfferEnsuringSize>Требуется обеспечение заявки в размере 948.00 рублей</OfferEnsuringSize>
+                                        <EnsuringCurrency>643</EnsuringCurrency>
+                                        <EnsuringForm>
+                                            <Form>MONEY</Form>
+                                            <Form>BANK</Form>
+                                            <Form>GRNT</Form>
+                                        </EnsuringForm>
+                                    </OfferEnsuring>
+
+                                    <ContractEnsuring>
+                                        <ContractEnsuringSize>Требуется обеспечение исполнения договора в размере 100.00 %</ContractEnsuringSize>
+                                        <EnsuringForm>
+                                            <!--Form>MONEY</Form-->
+                                            <Form>MONEY</Form>
+                                            <!--Form>GRNT</Form-->
+                                        </EnsuringForm>
+                                    </ContractEnsuring>
+
+                                    <PrepaymentEnsuring>
+                                        <EnsuringForm>
+                                            <Form>MONEY</Form>
+                                            <Form>GRNT</Form>
+                                            <!--Form>BANK</Form-->
+                                        </EnsuringForm>
+                                    </PrepaymentEnsuring>
+
+                                    <GuaranteeEnsuring>
+                                        <GuaranteeEnsuringSize>Требуется обеспечение исполнения договора в размере 100.00 %</GuaranteeEnsuringSize>
+                                        <EnsuringCurrency>840</EnsuringCurrency>
+                                        <EnsuringForm>
+                                            <!--Form>BANK</Form-->
+                                            <Form>BANK</Form>
+                                            <!--Form>MONEY</Form-->
+                                        </EnsuringForm>
+                                    </GuaranteeEnsuring>
+                                </Ensuring>
+                                <PositionList>
+                                    <!--1 or more repetitions:-->
+                                    <Position>
+                                        <PositionId>0000000001</PositionId>
+                                        <PositionName>Имя позиция 1</PositionName>
+                                        <MaterialGroup>Группа работ услуг прочее</MaterialGroup>
+                                        <Quantity>55</Quantity>
+                                        <MeasureUnit>ШТ</MeasureUnit>
+                                        <DeliveryStartDate>5365-10-31</DeliveryStartDate>
+                                        <DeliveryFinishDate>5365-12-31</DeliveryFinishDate>
+                                        <CustomerName>ООО НИИ РосМосТорг4</CustomerName>
+                                        <VATRate>NO_VAT</VATRate>
+                                        <Price>4001</Price>
+                                        <!--NeedPosAudit>YServ</NeedPosAudit-->
+                                        <!--CriticalProd>true</CriticalProd-->
+                                    </Position>
+                                </PositionList>
+                                <Alternative>true</Alternative>
+                                <OKDPType>OKDP2</OKDPType>
+                                <IsForeign>false</IsForeign>
+                                <IsFrame>false</IsFrame> <!--признак рамок-->
+                                <!--UnitRatesSum>1000.00</UnitRatesSum-->
+                                <!--сумма единичных расценок, включать если рамки-->
+                            </BaseLot>
+                            <PriceStep>5</PriceStep>
+                            <!--Optional:-->
+                            <PriceStep1>2</PriceStep1>
+                            <ParticipantPreference>Сведения о предоставлении преференций</ParticipantPreference>
+                            <StartDate>{{timeFormat(param.startDate | default('2022-07-25T10:00:00Z'))}}</StartDate>
+                            <!--Optional:-->
+                            <EndDate>{{dateFormat(param.endDate | default('2022-07-26'))}}</EndDate>
+                            <!--Optional:-->
+                            <MatchingDate>{{dateFormat(param.matchingDate | default('2022-07-20'))}}</MatchingDate>
+                            <!--Optional:-->
+                            <CancelAuction>false</CancelAuction>
+                            <!--Optional:-->
+                            <ResumeDate>{{timeFormat(param.resumeDate | default('2022-07-20T10:00:00Z'))}}</ResumeDate>
+                            <ReviewDate2>{{timeFormat(param.reviewDate2 | default('2022-07-20T10:00:00Z'))}}</ReviewDate2>
+                            <!--Optional:-->
+                            <QualifyingDate>{{dateFormat(param.qualifyingDate | default('2022-07-20'))}}</QualifyingDate>
+                            <!--Optional:-->
+                            <FinishDate>{{dateFormat(param.finishDate | default('2022-07-20'))}}</FinishDate>
+                        </Lot>
+                    </LotList>
+                </BuyerReduction>
+                <!--Optional:-->
+                <FileIdList>
+                    <!--1 or more repetitions:-->
+                    <FileId>test200041</FileId>
+                </FileIdList>
+            </Announcement>
+        </n0:PreparedProcedure>
+    </SOAP:Body>
+</SOAP:Envelope>

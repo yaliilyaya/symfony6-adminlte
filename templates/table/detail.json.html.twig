@@ -1,0 +1,19 @@
+{%  extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %}Просмотр json поля | {{ table.label | normalizeName }} | {{ fieldName }}{% endblock %}
+
+{% block page_content %}
+    <form class="card" method="post">
+        <div class="card-header">
+            <h2 class="card-title">
+                Просмотр json поля {{ fieldName }}
+                <a href="{{path('data_admin.detail', {connectionString: connectionString, id: id})}}">
+                    {{ table.label | normalizeName }} #{{ id }}
+                </a>
+            </h2>
+        </div>
+        <pre class="card-body p-0">{{ json }}</pre>
+    </form>
+
+
+{% endblock %}

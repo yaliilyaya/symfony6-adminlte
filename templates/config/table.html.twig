@@ -1,0 +1,20 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block page_content %}
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Название</h3>
+            <div class="card-tools btn-group">
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    {{ form(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

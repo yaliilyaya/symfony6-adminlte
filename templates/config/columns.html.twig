@@ -1,0 +1,65 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block page_content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Название</h3>
+            <div class="card-tools btn-group">
+            </div>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-bordered table-hover dataTable">
+                <thead>
+                <tr role="row">
+                    <th>Label</th>
+                    <th>View in list</th>
+                    <th>View in detail</th>
+                    <th>View in popup</th>
+                    <th>Config</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for column in columns %}
+                    <tr role="row" class="odd">
+                        <td>{{ column.label }}</td>
+                        <td>
+                            <a class="btn {{ column.isViewList ? 'btn-success' : 'btn-default' }}"
+                               href="{{ path('data_admin.settings.column.enabledViewList', {'columnId': column.id, 'enabled': column.isViewList ? 'false' : 'true'}) }}">
+                                <i class="fa {{ column.isViewList ? 'fa-eye' : 'fa-eye-slash' }}"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="btn {{ column.isViewDetail ? 'btn-success' : 'btn-default' }}"
+                               href="{{ path('data_admin.settings.column.enabledViewDetail', {'columnId': column.id, 'enabled': column.isViewDetail ? 'false' : 'true'}) }}">
+                                <i class="fa {{ column.isViewDetail ? 'fa-eye' : 'fa-eye-slash' }}"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="btn {{ column.isViewPopup ?  'btn-success' : 'btn-default'}}"
+                               href="{{ path('data_admin.settings.column.enabledViewPopup', {'columnId': column.id, 'enabled': column.isViewPopup ? 'false' : 'true'}) }}">
+                                <i class="fa {{ column.isViewPopup ? 'fa-eye' : 'fa-eye-slash' }}"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="...">
+                                <a class="btn btn-primary " href="{{ path('data_admin.settings.column.edit', {'columnId': column.id}) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-primary " href="{{ path('data_admin.relativeCreate', {'columnId': column.id}) }}"><i class="fa fa-link"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Label</th>
+                    <th>View in list</th>
+                    <th>View in detail</th>
+                    <th>View in popup</th>
+                    <th>Config</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+#link https://symfony.com/doc/current/routing.html#route-groups-and-prefixes
+data_admin:
+  type: annotation
+  # the controller value has the format 'controller_class::method_name'
+  resource: '../../src/Controller'
+  name_prefix: 'data_admin.'
+
+

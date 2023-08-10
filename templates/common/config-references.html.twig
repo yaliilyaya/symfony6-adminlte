@@ -1,0 +1,27 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %} Config common | {{ table.name | normalizeName }}{% endblock %}
+
+{% block page_content %}
+    <form method="post" class="card">
+        <div class="card-header">
+            Настройки
+            <div class="card-tools btn-group">
+                <button class="btn btn-info btn-sm" type="submit">Сохранить изменения</button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <textarea class="form-control"
+                      style="height: 700px"
+                      name="data"
+            >{{ json }}</textarea>
+        </div>
+        <div class="card-body p-0">
+            <pre class="form-control"
+                      style="height: 700px"
+            >{{ compareConfigReferences | json_encode(constant('JSON_PRETTY_PRINT') b-or constant('JSON_HEX_QUOT')) }}</pre>
+        </div>
+    </form>
+
+
+{% endblock %}

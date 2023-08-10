@@ -1,0 +1,36 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %} Config culumn | {{ connectionString }} - {{columnName}}{% endblock %}
+
+{% block page_content %}
+    <form method="post" class="card">
+        <div class="card-header">
+            Настройки <a href="{{ path('data_admin.column.view.config', {connectionString: connectionString}) }}">{{connectionString}}</a>
+            <div class="card-tools btn-group">
+                <button class="btn btn-info btn-sm" type="submit">Сохранить изменения</button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <textarea class="form-control"
+                      style="height: 700px"
+                      name="data"
+            >{{ json }}</textarea>
+        </div>
+    </form>
+    {% if (compareColumnConfig) %}
+    <div class="card">
+        <div class="card-header">
+            Схема сравнения {{compareSchemaName}}.{{table.name}} - {{columnName}}
+            <div class="card-tools btn-group">
+                <button class="btn btn-info btn-sm" type="submit">Сохранить изменения</button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            {% set value = compareColumnConfig | json_encode(constant('JSON_PRETTY_PRINT') b-or constant('JSON_HEX_QUOT')) %}
+            <pre>{{ value }}</pre>
+        </div>
+    </div>
+    {% endif %}
+
+
+{% endblock %}

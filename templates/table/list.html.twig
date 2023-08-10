@@ -1,0 +1,48 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %}Список | {{ table.label | normalizeName }}{% endblock %}
+
+{% block page_content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">{{ table.label | normalizeName }}</h3>
+
+            <div class="card-tools">
+                {{ toolbar | default | raw }}
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="tab-content" id="custom-content-below-tabContent">
+                <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="">
+                    <div class="row">
+                        <div class="col-12">
+                            <form method="get">
+                                <div class="input-group">
+                                    <input type="text" name="filter" id="filter" class="form-control"
+                                           placeholder="Search" value="{{ filter ? filter | json_encode : '' }}">
+                                    <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-flat"><i
+                                                class="fas fa-search"></i> Search</button>
+                                </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {% set filterUrl = filter ? filter | json_encode : '{}'%}
+                            <table class="table table-bordered table-hover dataTable"
+                                data-table-config="{{ path('data_admin.list.table.config', {connectionString: connectionString}) }}?filter={{ filterUrl }}">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby=""></div>
+                <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby=""></div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

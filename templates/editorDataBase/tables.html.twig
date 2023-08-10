@@ -1,0 +1,50 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block page_content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Название</h3>
+            <div class="card-tools btn-group">
+            </div>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-bordered table-hover dataTable">
+                <thead>
+                <tr role="row">
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>IsActive</th>
+                    <th width="230">Tools</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for table in tables %}
+                    <tr role="row" class="odd">
+                        <td>
+                            <a href="{{ path('data_admin.listById',{'tableId': table.id }) }}">{{ table.name }}</a>
+                        </td>
+                        <td>{{ table.description }}</td>
+                        <td>{{ table.isActive }}</td>
+                        <td>
+                            <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                <a class="btn btn-default" href="{{ path('data_admin.settings.table.sync', {'tableId': table.id}) }}">Sync Table</a>
+                                <a class="btn btn-primary " href="{{ path('data_admin.settings.table.edit', {'tableId': table.id}) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-primary " href="{{ path('data_admin.settings.columns.config', {'tableId': table.id}) }}"><i class="fa fa-columns"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>IsActive</th>
+                    <th>Tools</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock %}

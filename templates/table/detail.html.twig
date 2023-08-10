@@ -1,0 +1,86 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %}Подробная информация | {{ table.label | normalizeName }}{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <a href="{{path('data_admin.list', {connectionString: connectionString})}}">
+                            {{ table.label | normalizeName }}
+                        </a>
+                    </h2>
+                    <div class="card-tools">
+                        {{ toolbar | default | raw }}
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="tab-content" id="custom-content-below-tabContent">
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="">
+                            <table class="table table-bordered table-striped js-options-table js-options-table">
+                                <thead>
+                                <tr role="row">
+                                    <th>Name</th>
+                                    <th>Value</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for column in columns %}
+                                    <tr>
+                                        <td title="{{ column.type.name }} {{ column.description }}">
+                                            {% if appConfig().canEdit %}
+                                                {% set link = path('data_admin.common.column.view.config', {
+                                                    connectionString: connectionString,
+                                                    columnName: column.name
+                                                }) %}
+                                                <a class="fa fa-bars" style="float: right;" href="{{link}}"></a>
+                                            {% endif %}
+                                            <b>{{ column.label | normalizeName }}</b>
+                                        </td>
+                                        <td>
+                                            {% set value = row[column.name] | default %}
+                                            <div style="overflow: hidden; max-width: 300px">{{ value | raw }}</div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby=""></div>
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            {% for referenceName, reference in references %}
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <a href="{{ reference['table-list-url'] }}" target="_blank"> {{ referenceName }}</a>
+                            - {{ reference['filter'] | json_encode }}
+                        </h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover dataTable"
+                                       data-table-config="{{ reference['table-url'] }}">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

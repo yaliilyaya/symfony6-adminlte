@@ -1,0 +1,80 @@
+{% extends '@DataAdmin/layout.html.twig' %}
+
+{% block title %}Название{% endblock %}
+
+{% block page_content %}
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Название</h3>
+            <div class="card-tools btn-group">
+                <a class="btn btn-default btn-sm" href="{{ path('data_admin.sync.table-config', {connectionString: connectionString}) }}?enable=1" >
+                    Показать активные
+                </a>
+                <a class="btn btn-default btn-sm" href="{{ path('data_admin.config.compare-schema') }}?compare={{connectionString}}" >
+                    Добавить в сравнение
+                </a>
+                <a class="btn btn-success btn-sm" href="{{ path('data_admin.sync', {connectionString: connectionString}) }}" >
+                    Синхронизировать
+                </a>
+            </div>
+        </div>
+
+        <div class="card-body">
+
+            <div class="tab-content" id="custom-content-below-tabContent">
+                <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th width="300">Название</th>
+                            <th width="50">Включено</th>
+                            <th>Конфиг</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for key, table in tables %}
+                            {% set tableConnectionString = [connectionString,  table.name] | join('.') %}
+                            <tr id="table.{{table.name}}">
+                                <td>
+                                    {% if table.enable %}
+                                        <a  href="{{ path('data_admin.list', {
+                                            connectionString: tableConnectionString
+                                        }) }}">
+                                            {{ table.name }}
+                                        </a>
+                                    {% else %}
+                                        {{ table.name }}
+                                    {% endif %}
+                                </td>
+                                <td class="p-2">
+                                    {% set config = {
+                                        connectionString: connectionString,
+                                        tableName: table.name,
+                                        enableType: table.enable == false ? 'yes' : 'no'
+                                    } %}
+                                    <a  href="{{ path('data_admin.enable.table-config', config) }}" class="btn btn-sm btn-{{ table.enable ? 'success': 'danger'}}">
+                                        {{ table.enable ? 'Y' : 'N' }}
+                                    </a>
+                                </td>
+                                <td class="p-2">
+                                    <a  href="{{ path('data_admin.column.view.config', {
+                                        connectionString: tableConnectionString
+                                    }) }}" class="btn btn-sm btn-info">
+                                        Настройка колонок
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby=""></div>
+                <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby=""></div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
