@@ -7,10 +7,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ path('data_admin.icons') }}" class="nav-link">Icons</a>
+            <a href="{{ path('symfony6-adminlte.icons') }}" class="nav-link">Icons</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ path('data_admin.schema.list') }}" class="nav-link">SchemaList</a>
+            <a href="{{ path('symfony6-adminlte.schema.list') }}" class="nav-link">SchemaList</a>
         </li>
     </ul>
 
@@ -87,7 +87,7 @@
 {#            </div>#}
 {#        </li>#}
         <!-- Notifications Dropdown Menu -->
-        {% set notificationList = notificationList() %}
+        {% set notificationList = [] %}
 
         {% if notificationList %}
         <li class="nav-item dropdown">

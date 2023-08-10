@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block page_content %}
 
@@ -25,7 +25,7 @@
                         <td>{{ relative.columnTo.table.label }} - {{ relative.columnTo.label }}</td>
                         <td>
                             <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                                <a class="btn btn-default" href="{{ path('data_admin.relativeRemove', {'relativeId': relative.id}) }}"><i class="glyphicon glyphicon-trash"></i></a>
+                                <a class="btn btn-default" href="{{ path('symfony6-adminlte.relativeRemove', {'relativeId': relative.id}) }}"><i class="glyphicon glyphicon-trash"></i></a>
                             </div>
                         </td>
                     </tr>

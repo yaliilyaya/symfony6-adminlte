@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block page_content %}
     <div class="card">
@@ -25,26 +25,26 @@
                         <td>{{ column.label }}</td>
                         <td>
                             <a class="btn {{ column.isViewList ? 'btn-success' : 'btn-default' }}"
-                               href="{{ path('data_admin.settings.column.enabledViewList', {'columnId': column.id, 'enabled': column.isViewList ? 'false' : 'true'}) }}">
+                               href="{{ path('symfony6-adminlte.settings.column.enabledViewList', {'columnId': column.id, 'enabled': column.isViewList ? 'false' : 'true'}) }}">
                                 <i class="fa {{ column.isViewList ? 'fa-eye' : 'fa-eye-slash' }}"></i>
                             </a>
                         </td>
                         <td>
                             <a class="btn {{ column.isViewDetail ? 'btn-success' : 'btn-default' }}"
-                               href="{{ path('data_admin.settings.column.enabledViewDetail', {'columnId': column.id, 'enabled': column.isViewDetail ? 'false' : 'true'}) }}">
+                               href="{{ path('symfony6-adminlte.settings.column.enabledViewDetail', {'columnId': column.id, 'enabled': column.isViewDetail ? 'false' : 'true'}) }}">
                                 <i class="fa {{ column.isViewDetail ? 'fa-eye' : 'fa-eye-slash' }}"></i>
                             </a>
                         </td>
                         <td>
                             <a class="btn {{ column.isViewPopup ?  'btn-success' : 'btn-default'}}"
-                               href="{{ path('data_admin.settings.column.enabledViewPopup', {'columnId': column.id, 'enabled': column.isViewPopup ? 'false' : 'true'}) }}">
+                               href="{{ path('symfony6-adminlte.settings.column.enabledViewPopup', {'columnId': column.id, 'enabled': column.isViewPopup ? 'false' : 'true'}) }}">
                                 <i class="fa {{ column.isViewPopup ? 'fa-eye' : 'fa-eye-slash' }}"></i>
                             </a>
                         </td>
                         <td>
                             <div class="btn-group" role="group" aria-label="...">
-                                <a class="btn btn-primary " href="{{ path('data_admin.settings.column.edit', {'columnId': column.id}) }}"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-primary " href="{{ path('data_admin.relativeCreate', {'columnId': column.id}) }}"><i class="fa fa-link"></i></a>
+                                <a class="btn btn-primary " href="{{ path('symfony6-adminlte.settings.column.edit', {'columnId': column.id}) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-primary " href="{{ path('symfony6-adminlte.relativeCreate', {'columnId': column.id}) }}"><i class="fa fa-link"></i></a>
                             </div>
                         </td>
                     </tr>

@@ -10,21 +10,21 @@
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                        Интеграция с SRM
+                        Раскрывающийся список
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
                     <li class="nav-item">
-                        <a href="{{ path('data_admin.list', {'connectionString': 'default.rosatom-procedures.incoming_packet'}) }}" class="nav-link">
+                        <a href="{#{ path('symfony6-adminlte.list', {'connectionString': 'default.incoming_packet'}) } #}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Входящие пакеты</p>
+                            <p>Страница </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ path('data_admin.list', {'connectionString': 'default.rosatom-procedures.outgoing_packet'}) }}" class="nav-link">
+                        <a href="{# { path('symfony6-adminlte.list', {'connectionString': 'default.outgoing_packet'}) } #}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Исходящие пакеты</p>
+                            <p>Страница </p>
                         </a>
                     </li>
                 </ul>

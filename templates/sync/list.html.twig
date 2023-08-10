@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block title %}Название{% endblock %}
 
@@ -8,13 +8,13 @@
         <div class="card-header">
             <h3 class="card-title">Название</h3>
             <div class="card-tools btn-group">
-                <a class="btn btn-default btn-sm" href="{{ path('data_admin.sync.table-config', {connectionString: connectionString}) }}?enable=1" >
+                <a class="btn btn-default btn-sm" href="{{ path('symfony6-adminlte.sync.table-config', {connectionString: connectionString}) }}?enable=1" >
                     Показать активные
                 </a>
-                <a class="btn btn-default btn-sm" href="{{ path('data_admin.config.compare-schema') }}?compare={{connectionString}}" >
+                <a class="btn btn-default btn-sm" href="{{ path('symfony6-adminlte.config.compare-schema') }}?compare={{connectionString}}" >
                     Добавить в сравнение
                 </a>
-                <a class="btn btn-success btn-sm" href="{{ path('data_admin.sync', {connectionString: connectionString}) }}" >
+                <a class="btn btn-success btn-sm" href="{{ path('symfony6-adminlte.sync', {connectionString: connectionString}) }}" >
                     Синхронизировать
                 </a>
             </div>
@@ -38,7 +38,7 @@
                             <tr id="table.{{table.name}}">
                                 <td>
                                     {% if table.enable %}
-                                        <a  href="{{ path('data_admin.list', {
+                                        <a  href="{{ path('symfony6-adminlte.list', {
                                             connectionString: tableConnectionString
                                         }) }}">
                                             {{ table.name }}
@@ -53,12 +53,12 @@
                                         tableName: table.name,
                                         enableType: table.enable == false ? 'yes' : 'no'
                                     } %}
-                                    <a  href="{{ path('data_admin.enable.table-config', config) }}" class="btn btn-sm btn-{{ table.enable ? 'success': 'danger'}}">
+                                    <a  href="{{ path('symfony6-adminlte.enable.table-config', config) }}" class="btn btn-sm btn-{{ table.enable ? 'success': 'danger'}}">
                                         {{ table.enable ? 'Y' : 'N' }}
                                     </a>
                                 </td>
                                 <td class="p-2">
-                                    <a  href="{{ path('data_admin.column.view.config', {
+                                    <a  href="{{ path('symfony6-adminlte.column.view.config', {
                                         connectionString: tableConnectionString
                                     }) }}" class="btn btn-sm btn-info">
                                         Настройка колонок

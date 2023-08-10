@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/css/responsive.bootstrap4.min.css">
 
-    {% set title = block("title") is defined  ? block('title') : 'Data Admin' %}
+    {% set title = block("title") is defined  ? block('title') : 'Symfony6AdminLte' %}
     <title>{{ title }}</title>
     {% block stylesheets %}{% endblock %}
 </head>
@@ -23,16 +23,16 @@
 <script src="/js/jquery.min.js"></script>
 <div class="wrapper">
 
-    {% include '@DataAdmin/main/navbar.html.twig' %}
+    {% include '@Symfony6AdminLte/main/navbar.html.twig' %}
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Data Admin</span>
+            <img src="/dist/img/AdminLTELogo.png" alt="Symfony6AdminLte Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Symfony6AdminLte</span>
         </a>
-        {% include '@DataAdmin/main/sidebar.html.twig' %}
+        {% include '@Symfony6AdminLte/main/sidebar.html.twig' %}
 
     </aside>
 
@@ -47,7 +47,7 @@
                         <h1 class="m-0">{{ title }}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
-                        {% include '@DataAdmin/main/breadcrumb.html.twig' %}
+                        {% include '@Symfony6AdminLte/main/breadcrumb.html.twig' %}
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->

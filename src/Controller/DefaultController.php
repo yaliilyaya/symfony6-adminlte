@@ -24,10 +24,4 @@ class DefaultController extends AbstractController
     {
         return $this->render('@DataAdmin/main/icons.html.twig', []);
     }
-
-    #[Route("/schema/list", name: "schema.list")]
-    public function schemaList(): Response
-    {
-        return $this->render('@DataAdmin/schema/list.html.twig', []);
-    }
 }

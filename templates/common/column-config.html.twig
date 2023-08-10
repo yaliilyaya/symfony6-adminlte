@@ -1,11 +1,11 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block title %} Config culumn | {{ connectionString }} - {{columnName}}{% endblock %}
 
 {% block page_content %}
     <form method="post" class="card">
         <div class="card-header">
-            Настройки <a href="{{ path('data_admin.column.view.config', {connectionString: connectionString}) }}">{{connectionString}}</a>
+            Настройки <a href="{{ path('symfony6-adminlte.column.view.config', {connectionString: connectionString}) }}">{{connectionString}}</a>
             <div class="card-tools btn-group">
                 <button class="btn btn-info btn-sm" type="submit">Сохранить изменения</button>
             </div>

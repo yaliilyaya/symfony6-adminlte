@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block title %}Список | {{ table.label | normalizeName }}{% endblock %}
 
@@ -33,7 +33,7 @@
                         <div class="col-12">
                             {% set filterUrl = filter ? filter | json_encode : '{}'%}
                             <table class="table table-bordered table-hover dataTable"
-                                data-table-config="{{ path('data_admin.list.table.config', {connectionString: connectionString}) }}?filter={{ filterUrl }}">
+                                data-table-config="{{ path('symfony6-adminlte.list.table.config', {connectionString: connectionString}) }}?filter={{ filterUrl }}">
                             </table>
                         </div>
                     </div>

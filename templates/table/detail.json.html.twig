@@ -1,4 +1,4 @@
-{%  extends '@DataAdmin/layout.html.twig' %}
+{%  extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block title %}Просмотр json поля | {{ table.label | normalizeName }} | {{ fieldName }}{% endblock %}
 
@@ -7,7 +7,7 @@
         <div class="card-header">
             <h2 class="card-title">
                 Просмотр json поля {{ fieldName }}
-                <a href="{{path('data_admin.detail', {connectionString: connectionString, id: id})}}">
+                <a href="{{path('symfony6-adminlte.detail', {connectionString: connectionString, id: id})}}">
                     {{ table.label | normalizeName }} #{{ id }}
                 </a>
             </h2>

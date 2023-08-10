@@ -26,7 +26,7 @@ class AppExtension extends  AbstractExtension
     {
         return [
             new TwigFunction('notificationList', [NotificationExtension::class, 'notificationList']),
-            new TwigFunction('appConfig', [AppConfigExtension::class, 'appConfig']),
+//            new TwigFunction('appConfig', [AppConfigExtension::class, 'appConfig']),
             new TwigFunction('rand', [RandExtension::class, 'rand']),
             new TwigFunction('dateFormat', [DateFormatExtension::class, 'dateFormat']),
             new TwigFunction('timeFormat', [DateFormatExtension::class, 'timeFormat']),

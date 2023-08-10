@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block page_content %}
     <div class="card">
@@ -22,15 +22,15 @@
                 {% for table in tables %}
                     <tr role="row" class="odd">
                         <td>
-                            <a href="{{ path('data_admin.listById',{'tableId': table.id }) }}">{{ table.name }}</a>
+                            <a href="{{ path('symfony6-adminlte.listById',{'tableId': table.id }) }}">{{ table.name }}</a>
                         </td>
                         <td>{{ table.description }}</td>
                         <td>{{ table.isActive }}</td>
                         <td>
                             <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                                <a class="btn btn-default" href="{{ path('data_admin.settings.table.sync', {'tableId': table.id}) }}">Sync Table</a>
-                                <a class="btn btn-primary " href="{{ path('data_admin.settings.table.edit', {'tableId': table.id}) }}"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-primary " href="{{ path('data_admin.settings.columns.config', {'tableId': table.id}) }}"><i class="fa fa-columns"></i></a>
+                                <a class="btn btn-default" href="{{ path('symfony6-adminlte.settings.table.sync', {'tableId': table.id}) }}">Sync Table</a>
+                                <a class="btn btn-primary " href="{{ path('symfony6-adminlte.settings.table.edit', {'tableId': table.id}) }}"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-primary " href="{{ path('symfony6-adminlte.settings.columns.config', {'tableId': table.id}) }}"><i class="fa fa-columns"></i></a>
                             </div>
                         </td>
                     </tr>

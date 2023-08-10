@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block title %}Подробная информация | {{ table.label | normalizeName }}{% endblock %}
 
@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">
-                        <a href="{{path('data_admin.list', {connectionString: connectionString})}}">
+                        <a href="{{path('symfony6-adminlte.list', {connectionString: connectionString})}}">
                             {{ table.label | normalizeName }}
                         </a>
                     </h2>
@@ -32,7 +32,7 @@
                                     <tr>
                                         <td title="{{ column.type.name }} {{ column.description }}">
                                             {% if appConfig().canEdit %}
-                                                {% set link = path('data_admin.common.column.view.config', {
+                                                {% set link = path('symfony6-adminlte.common.column.view.config', {
                                                     connectionString: connectionString,
                                                     columnName: column.name
                                                 }) %}

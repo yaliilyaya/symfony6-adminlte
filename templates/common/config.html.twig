@@ -1,4 +1,4 @@
-{% extends '@DataAdmin/layout.html.twig' %}
+{% extends '@Symfony6AdminLte/layout.html.twig' %}
 
 {% block title %} Config common | {{ table.name | normalizeName }}{% endblock %}
 
@@ -7,7 +7,7 @@
         <div class="card-header">
             Настройки
             <div class="card-tools btn-group">
-                <a class="btn btn-default btn-sm" href="{{path('data_admin.common.references.view.config', {connectionString: connectionString})}}">References</a>
+                <a class="btn btn-default btn-sm" href="{{path('symfony6-adminlte.common.references.view.config', {connectionString: connectionString})}}">References</a>
                 <button class="btn btn-info btn-sm" type="submit">Сохранить изменения</button>
             </div>
         </div>
