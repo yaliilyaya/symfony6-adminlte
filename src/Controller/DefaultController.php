@@ -16,12 +16,12 @@ class DefaultController extends AbstractController
     #[Route("/")]
     public function index(): Response
     {
-        return $this->render('@DataAdmin/mainPage.html.twig', []);
+        return $this->render('@Symfony6AdminLte/mainPage.html.twig', []);
     }
 
     #[Route("/icons", name: "icons")]
     public function icons(): Response
     {
-        return $this->render('@DataAdmin/main/icons.html.twig', []);
+        return $this->render('@Symfony6AdminLte/main/icons.html.twig', []);
     }
 }
