@@ -2,6 +2,7 @@
 
 
 namespace Yaliilyaya\Symfony6AdminLte\Twig;
+
 use Yaliilyaya\Symfony6AdminLte\Model\Rand;
 use Twig\Extension\RuntimeExtensionInterface;
 
