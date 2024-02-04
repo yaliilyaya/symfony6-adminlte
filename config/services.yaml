@@ -9,3 +9,4 @@ services:
       - '../src/DependencyInjection'
       - '../src/Model'
       - '../src/RosatomIntegrationSRM.php'
+  Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface: '@Yaliilyaya\Symfony6AdminLte\Service\FlashBagService'
