@@ -32,7 +32,9 @@
             <img src="/cache/adminlte/dist/img/AdminLTELogo.png" alt="Symfony6AdminLte Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">{{ parameters.title | default("Symfony6AdminLte") }}</span>
         </a>
-        {% include '@Symfony6AdminLte/main/sidebar.html.twig' %}
+        {% include '@Symfony6AdminLte/main/sidebar.html.twig' with {
+            content: block('page_sidebar')
+        }  %}
 
     </aside>
 
@@ -47,7 +49,7 @@
                         <h1 class="m-0">{{ title }}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
-                        {% include '@Symfony6AdminLte/main/breadcrumb.html.twig' %}
+                        {% include '@Symfony6AdminLte/main/breadcrumb.html.twig'  %}
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
