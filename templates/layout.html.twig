@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/cache/adminlte/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/cache/adminlte/css/responsive.bootstrap4.min.css">
 
-    {% set title = block("title") is defined  ? block('title') : 'Symfony6AdminLte' %}
+    {% set title = block("title") is defined  ? block('title') : (parameters.title | default("Symfony6AdminLte")) %}
     <title>{{ title }}</title>
     {% block stylesheets %}{% endblock %}
 </head>
@@ -30,7 +30,7 @@
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
             <img src="/cache/adminlte/dist/img/AdminLTELogo.png" alt="Symfony6AdminLte Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Symfony6AdminLte</span>
+            <span class="brand-text font-weight-light">{{ parameters.title | default("Symfony6AdminLte") }}</span>
         </a>
         {% include '@Symfony6AdminLte/main/sidebar.html.twig' %}
 
