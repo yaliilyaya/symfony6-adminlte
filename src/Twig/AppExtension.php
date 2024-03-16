@@ -17,6 +17,7 @@ class AppExtension extends  AbstractExtension
         return [
             new TwigFilter('normalizeName', [NormalizeNameExtension::class, 'formatNormalizeName']),
             new TwigFilter('typeof', [TypeofExtension::class, 'typeof']),
+            new TwigFilter('arrayFilter', [ArrayFilterExtension::class, 'arrayFilter']),
         ];
     }
 
