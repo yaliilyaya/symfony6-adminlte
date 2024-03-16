@@ -33,4 +33,16 @@ class Rand
         }
         return $randomString;
     }
+
+    public function messageId($length = 10): string
+    {
+        $characters = '0123456789ABCDEF';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
 }
